@@ -120,14 +120,11 @@ export async function loadUserResponse(
 
         const response = new ResponseContext(userResponse, requestCtx);
 
-        //TODO: const decodedPathParams = getDecodedPathParams(params);
-        //TODO: const decodedQueryParams = getDecodedQueryParams(url);
-
         // create user request event, which is a narrowed down request context
         const requestEv: RequestEvent = {
           request,
           url: new URL(url),
-          params: { ...params },//TODO: {...decodedPathParams, ...decodedQueryParams}
+          params: { ...params },
           response,
           platform,
           cookie,
